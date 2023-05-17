@@ -21,7 +21,14 @@ Add ajax-button script anywhere you want. It has no dependencies. If you use cus
 
 ## Usage
 
-Add class `js-ajax-button` to button that you want to be ajaxed.  
+Add class `js-ajax-button` to button that you want to be ajaxed.
+
+```html
+<button class="js-ajax-button" data-url="/action/123">Action</button>
+```
+When added, on button click will send post request to `data-url`
+
+
 Change ajax-button-notifications or change code of ajax-button to run your notification without bridge layer for your notification/alert function. See demo for bootstrap 5 notification and alerts.
 
 #### Global defaults from ajax-button.settings.js
