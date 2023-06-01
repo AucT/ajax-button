@@ -34,6 +34,9 @@ document.addEventListener('click', function (e) {
             if (button.getAttribute('data-reload')) {
                 document.location.reload();
             }
+            if (data['redirect']) {
+                window.location = data['redirect'];
+            }
             if (button.getAttribute('data-redirect')) {
                 window.location = button.getAttribute('data-redirect');
             }
