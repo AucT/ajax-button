@@ -39,10 +39,10 @@ var ajaxButton = {
     additionalData: '&_token=MY_CSRF_HERE',
 
     success: function (xhr, button, notificationMessage) {
-        demoNotification.success(button, notificationMessage);
+        alert('success!' + '\n' + notificationMessage);
     },
     error: function (xhr, button, exception) {
-        demoNotification.error(xhr, button, exception);
+        alert('error!' + '\n' + 'status: '+xhr.status + '\n' + 'exception: ' + exception);
     },
 };
 ```
@@ -50,7 +50,7 @@ var ajaxButton = {
 
 ## Dynamic options for the button
 
-You can place options in html of the form. For example `<button data-reload="1" class="js-ajax-button">`
+You can place options in html of the button. For example `<button data-reload="1" class="js-ajax-button">`
 ```
 
 data-confirm="Delete this world?" - ask confirm dialog. Procceeds only after OK is clicked (confirmed)
@@ -66,9 +66,11 @@ data-callback-error="myFunc" - callback function after error
 
 //additional data on any button can be placed
 data-adata="&_method=DELETE" - will add _method=DELETE to the button (this is laravel thing)
+```
 
+## Server responses
 
-//callback function example: function myFunc (xhr, button, message, exception)
-data-callback-success="myFunc" - callback function after success
-data-callback-error="myFunc" - callback function after error
+```
+{"redirect":"/example"} //will redirect to /example
+{"message":"successfully build reactjs alternative"} //will use this notification message instead of default. `message` field can be changed in settings
 ```
