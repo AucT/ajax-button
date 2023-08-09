@@ -28,8 +28,14 @@ document.addEventListener('click', function (e) {
     }
     button.disabled = true;
     ajaxButton.postData('post', url, ajaxButton.additionalData + (button.getAttribute('data-adata') || ''), function (data, xhr) {
-            data = JSON.parse(data);
-            ajaxButton.success(xhr, button, data[ajaxButton.notificationMessageObject] || ajaxButton.notificationMessageDefault);
+            let notificationMessage;
+            try {
+                data = JSON.parse(data);
+                notificationMessage = data[ajaxButton.notificationMessageObject] || ajaxButton.notificationMessageDefault;
+            } catch (error) {
+                notificationMessage = (data || ajaxButton.notificationMessageDefault) + ajaxButton.jsonParseErrorSuffix;
+            }
+            ajaxButton.success(xhr, button, notificationMessage);
             button.disabled = false;
             if (button.getAttribute('data-reload')) {
                 document.location.reload();

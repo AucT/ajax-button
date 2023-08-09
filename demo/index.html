@@ -70,9 +70,21 @@
         </div>
 
         <div class="col small">
+            <h5>success (bad json)</h5>
+            <button data-url="https://uajaxdemo.auct.eu/response?badJson=1" class="btn btn-primary js-ajax-button js-follow3" data-toggle-hidden=".js-follow3">Follow</button>
+            <button data-url="https://uajaxdemo.auct.eu/response?badJson=1"  class="btn btn-secondary js-ajax-button js-follow3" data-toggle-hidden=".js-follow3" hidden>Following</button>
+        </div>
+
+        <div class="col small">
             <h5>error</h5>
             <button data-url="/404" class="btn btn-primary js-ajax-button js-follow2" data-toggle-hidden=".js-follow2">Follow</button>
             <button data-url="/404"  class="btn btn-secondary js-ajax-button js-follow2" data-toggle-hidden=".js-follow2" hidden>Following</button>
+        </div>
+
+        <div class="col small">
+            <h5>error (bad json)</h5>
+            <button data-url="https://uajaxdemo.auct.eu/response?badJson=1&code=400" class="btn btn-primary js-ajax-button js-follow4" data-toggle-hidden=".js-follow4">Follow</button>
+            <button data-url="https://uajaxdemo.auct.eu/response?badJson=1&code=400"  class="btn btn-secondary js-ajax-button js-follow4" data-toggle-hidden=".js-follow4" hidden>Following</button>
         </div>
 
     </div>
